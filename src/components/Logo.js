@@ -9,9 +9,7 @@ const StyledLogo = styled.p`
   margin-right: 7.5rem;
   font-weight: 700;
   color: ${({ theme }) => theme.logoColor};
+  cursor: pointer;
 `;
-StyledLogo.defaultProps = {
-  color: "black",
-};
 
 export default Logo;

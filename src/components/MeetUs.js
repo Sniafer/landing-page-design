@@ -2,6 +2,7 @@ import styled from "styled-components";
 import colors from "../utils/colors";
 import Card from "./Card";
 import Header from "./Header";
+import Subtext from "./Subtext";
 
 const MeetUs = () => {
   const theme = {
@@ -9,6 +10,7 @@ const MeetUs = () => {
     headerColor: colors.primary,
     textColor: colors.gray,
     sectionColor: colors.light,
+    underline: colors.gray,
   };
 
   return (
@@ -17,6 +19,11 @@ const MeetUs = () => {
         <HeaderWrapper>
           <Header>Meet us</Header>
         </HeaderWrapper>
+        <Subtext theme={theme}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ea
+          eos vitae sed. Sapiente non culpa aliquid quasi quo illum. Lorem ipsum
+          dolor sit amet, consectetur adipisicing elit.
+        </Subtext>
         <CardContainer>
           <Card theme={theme} />
         </CardContainer>
@@ -29,7 +36,7 @@ const Section = styled.section`
   margin-top: 7rem;
   background-color: ${({ theme }) => theme.sectionColor || colors.white};
   width: 100%;
-  height: 47.31rem;
+  padding-bottom: 7rem;
 `;
 
 const Article = styled.article`

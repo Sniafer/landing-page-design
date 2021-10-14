@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import heroImage from "../images/hero-image.png";
+import heroImage from "../images/monitor.svg";
 import underline from "../images/underline1.svg";
 import background from "../images/background.png";
 import colors from "../utils/colors";
@@ -15,6 +15,7 @@ const Hero = () => {
     backgroundColor: colors.primary,
     headerColor: colors.black,
     headerWidth: "29rem",
+    subWidth: "23rem",
   };
 
   return (

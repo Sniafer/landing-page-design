@@ -7,8 +7,9 @@ const Subtext = ({ children, theme }) => {
 const StyledSubtext = styled.p`
   font-size: 2.5rem;
   color: ${({ theme }) => theme.underline};
-  width: 23rem;
+  width: ${({ theme }) => theme.subWidth || "auto"};
   margin-top: 3.8rem;
+  letter-spacing: 0.1rem;
 `;
 
 export default Subtext;
