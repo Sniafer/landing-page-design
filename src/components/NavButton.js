@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const NavButton = ({ name }) => {
-  return <Button>{name}</Button>;
+const NavButton = ({ name, path }) => {
+  return (
+    <StyledLink to={path}>
+      <Button>{name}</Button>
+    </StyledLink>
+  );
 };
 
 const Button = styled.button`
@@ -10,9 +15,12 @@ const Button = styled.button`
   text-decoration: none;
   border: none;
   background: none;
-  margin-right: 4rem;
   color: ${({ theme }) => theme.buttonColor};
   cursor: pointer;
+`;
+const StyledLink = styled(Link)`
+  margin-right: 4rem;
+  text-decoration: none;
 `;
 
 export default NavButton;

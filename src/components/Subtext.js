@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
-const Subtext = ({ children, theme }) => {
-  return <StyledSubtext theme={theme}>{children}</StyledSubtext>;
+const Subtext = ({ children }) => {
+  return <StyledSubtext>{children}</StyledSubtext>;
 };
 
 const StyledSubtext = styled.p`
-  font-size: 2.5rem;
-  color: ${({ theme }) => theme.underline};
+  font-size: ${({ theme }) => theme.subFont || "2.25rem"};
+  color: ${({ theme }) => theme.subColor};
   width: ${({ theme }) => theme.subWidth || "auto"};
-  margin-top: 3.8rem;
+  margin-top: ${({ theme }) => theme.subTop || "3.8rem"};
   letter-spacing: 0.1rem;
+  line-height: 50px;
 `;
 
 export default Subtext;

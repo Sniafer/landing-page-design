@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import persons from "../utils/persons";
 
-const Card = ({ theme }) => {
+const Card = () => {
   return (
     <>
       {persons.map((person) => (
-        <StyledCard theme={theme}>
-          <Name theme={theme}>{person.name}</Name>
-          <Text theme={theme}>{person.text} </Text>
+        <StyledCard>
+          <Name>{person.name}</Name>
+          <Text>{person.text} </Text>
           <Image src={person.image} />
         </StyledCard>
       ))}
@@ -35,7 +35,7 @@ const StyledCard = styled.div`
 const Name = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.headerColor};
+  color: ${({ theme }) => theme.cardHeaderColor};
   margin-top: 5.84rem;
 `;
 

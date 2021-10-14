@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const Header = ({ children, theme }) => {
-  return <StyledHeader theme={theme}>{children}</StyledHeader>;
+const Header = ({ children }) => {
+  return <StyledHeader>{children}</StyledHeader>;
 };
 
 const StyledHeader = styled.h1`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const CallToAction = ({ children, theme }) => {
-  return <Button theme={theme}>{children}</Button>;
+const CallToAction = ({ children }) => {
+  return <Button>{children}</Button>;
 };
 
 export default CallToAction;

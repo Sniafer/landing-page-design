@@ -1,15 +1,15 @@
 const navItems = [
   {
     name: "Home",
-    link: "/",
+    path: "/",
   },
   {
     name: "Our Work",
-    link: "/work",
+    path: "/work",
   },
   {
     name: "Contact",
-    link: "/contact",
+    path: "/contact",
   },
 ];
 

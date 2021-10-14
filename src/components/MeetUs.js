@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
 import colors from "../utils/colors";
 import Card from "./Card";
 import Header from "./Header";
@@ -7,28 +8,30 @@ import Subtext from "./Subtext";
 const MeetUs = () => {
   const theme = {
     backgroundColor: colors.white,
-    headerColor: colors.primary,
+    cardHeaderColor: colors.primary,
     textColor: colors.gray,
     sectionColor: colors.light,
-    underline: colors.gray,
+    subColor: colors.gray,
   };
 
   return (
-    <Section theme={theme}>
-      <Article>
-        <HeaderWrapper>
-          <Header>Meet us</Header>
-        </HeaderWrapper>
-        <Subtext theme={theme}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ea
-          eos vitae sed. Sapiente non culpa aliquid quasi quo illum. Lorem ipsum
-          dolor sit amet, consectetur adipisicing elit.
-        </Subtext>
-        <CardContainer>
-          <Card theme={theme} />
-        </CardContainer>
-      </Article>
-    </Section>
+    <ThemeProvider theme={theme}>
+      <Section>
+        <Article>
+          <HeaderWrapper>
+            <Header>Meet us</Header>
+          </HeaderWrapper>
+          <Subtext>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam ea
+            eos vitae sed. Sapiente non culpa aliquid quasi quo illum. Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit.
+          </Subtext>
+          <CardContainer>
+            <Card />
+          </CardContainer>
+        </Article>
+      </Section>
+    </ThemeProvider>
   );
 };
 

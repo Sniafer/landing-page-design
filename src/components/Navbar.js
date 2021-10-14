@@ -12,6 +12,7 @@ const Navbar = () => {
     contactColor: colors.primary,
     contactBackground: colors.white,
     buttonColor: colors.black,
+    background: colors.white,
   };
 
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
       <Nav>
         <Logo text="CompanyLogo" />
         {navItems.map((item) => (
-          <NavButton name={item.name} key={item.name} />
+          <NavButton name={item.name} key={item.name} path={item.path} />
         ))}
         <ContactButton text="Get in touch" />
       </Nav>

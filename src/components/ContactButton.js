@@ -1,7 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ContactButton = ({ text }) => {
-  return <Button>{text}</Button>;
+  return (
+    <StyledLink to="/conact">
+      <Button>{text}</Button>
+    </StyledLink>
+  );
 };
 
 const Button = styled.button`
@@ -15,7 +20,6 @@ const Button = styled.button`
   border: none;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.contactColor};
-  margin-left: auto;
   transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
   cursor: pointer;
   &:hover {
@@ -26,6 +30,11 @@ const Button = styled.button`
     transform: translateY(2px);
     box-shadow: none;
   }
+`;
+
+const StyledLink = styled(Link)`
+  margin-left: auto;
+  text-decoration: none;
 `;
 
 export default ContactButton;

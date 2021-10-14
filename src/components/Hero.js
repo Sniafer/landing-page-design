@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
 import heroImage from "../images/monitor.svg";
 import underline from "../images/underline1.svg";
 import background from "../images/background.png";
@@ -10,7 +11,7 @@ import CallToAction from "./CallToAction";
 
 const Hero = () => {
   const theme = {
-    underline: colors.gray,
+    subColor: colors.gray,
     buttonColor: colors.white,
     backgroundColor: colors.primary,
     headerColor: colors.black,
@@ -19,20 +20,22 @@ const Hero = () => {
   };
 
   return (
-    <HeroSection>
-      <LeftSide>
-        <Header theme={theme}>
-          We make your work look amazing
-          <Underline image={underline} />
-        </Header>
-        <Subtext theme={theme}>Beatiful desgins at your fingertips</Subtext>
-        <CallToAction theme={theme}>See more</CallToAction>
-      </LeftSide>
-      <RightSide>
-        <Image src={heroImage} />
-        <Background src={background} />
-      </RightSide>
-    </HeroSection>
+    <ThemeProvider theme={theme}>
+      <HeroSection>
+        <LeftSide>
+          <Header>
+            We make your work look amazing
+            <Underline image={underline} />
+          </Header>
+          <Subtext>Beatiful desgins at your fingertips</Subtext>
+          <CallToAction>See more</CallToAction>
+        </LeftSide>
+        <RightSide>
+          <Image src={heroImage} />
+          <Background src={background} />
+        </RightSide>
+      </HeroSection>
+    </ThemeProvider>
   );
 };
 
