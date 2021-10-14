@@ -8,7 +8,7 @@ const StyledLogo = styled.p`
   font-size: 1.88rem;
   margin-right: 7.5rem;
   font-weight: 700;
-  color: ${({ theme }) => theme.color};
+  color: ${({ theme }) => theme.logoColor};
 `;
 StyledLogo.defaultProps = {
   color: "black",
