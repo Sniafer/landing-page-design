@@ -8,10 +8,11 @@ const MeetUs = () => {
     backgroundColor: colors.white,
     headerColor: colors.primary,
     textColor: colors.gray,
+    sectionColor: colors.light,
   };
 
   return (
-    <Section>
+    <Section theme={theme}>
       <Article>
         <HeaderWrapper>
           <Header>Meet us</Header>
@@ -26,7 +27,7 @@ const MeetUs = () => {
 
 const Section = styled.section`
   margin-top: 7rem;
-  background-color: #f9f4fc;
+  background-color: ${({ theme }) => theme.sectionColor || colors.white};
   width: 100%;
   height: 47.31rem;
 `;
