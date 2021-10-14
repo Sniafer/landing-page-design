@@ -19,7 +19,7 @@ const Navbar = () => {
       <Nav>
         <Logo text="CompanyLogo" />
         {navItems.map((item) => (
-          <NavButton name={item.name} />
+          <NavButton name={item.name} key={item.name} />
         ))}
         <ContactButton text="Get in touch" />
       </Nav>
@@ -28,10 +28,10 @@ const Navbar = () => {
 };
 
 const Nav = styled.div`
-  height: 3.69rem;
-  margin-top: 2rem;
   margin-left: 12rem;
   margin-right: 12rem;
+  height: 3.69rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
 `;

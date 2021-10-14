@@ -6,14 +6,10 @@ const GlobalStyles = createGlobalStyle`
      margin: 0;
      padding: 0;
  };
- html {
-     font-size: 16px;
-     @media (max-width: 1440px) {
-         font-size: 12px;
-     }
- }
  body {
-     font-family: "Roboto"
+     font-family: "Roboto";
+     /* margin-left: 12rem;
+     margin-right: 12rem; */
  };
 `;
 
