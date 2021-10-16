@@ -8,8 +8,6 @@ const GlobalStyles = createGlobalStyle`
  };
  body {
      font-family: "Roboto";
-     /* margin-left: 12rem;
-     margin-right: 12rem; */
  };
  .big {
      flex: 1.2;

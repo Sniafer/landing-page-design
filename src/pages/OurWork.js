@@ -45,7 +45,17 @@ const OurWork = () => {
       </TopSection>
       <BotSection>
         <Row>
-          {items.map((item) => (
+          {items.slice(0, 3).map((item) => (
+            <ImageCard
+              image={item.image}
+              key={item.id}
+              classname={item.size}
+              magnifying={magnifying}
+            />
+          ))}
+        </Row>
+        <Row>
+          {items.slice(3, 6).map((item) => (
             <ImageCard
               image={item.image}
               key={item.id}
@@ -75,6 +85,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 3.81rem;
 `;
 
 const LeftSide = styled.div`

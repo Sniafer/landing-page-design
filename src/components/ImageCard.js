@@ -3,9 +3,9 @@ import colors from "../utils/colors";
 
 const ImageCard = ({ image, magnifying, classname }) => {
   return (
-    <ImageContainer>
+    <ImageContainer className={classname}>
       <Magnifying src={magnifying} />
-      <Image src={image} className={classname} />
+      <Image src={image} />
     </ImageContainer>
   );
 };
@@ -14,13 +14,15 @@ const ImageContainer = styled.div`
   background-color: ${colors.primary};
   height: 19.5rem;
   position: relative;
-  margin-bottom: 3.81rem;
+  margin-right: 2rem;
 `;
 
 const Image = styled.img`
   height: 19.5rem;
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
+  width: 100%;
+  object-fit: cover;
   &:hover {
     opacity: 40%;
   }
