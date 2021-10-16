@@ -33,7 +33,7 @@ const OurWork = () => {
           <LeftSide>
             <Header>
               Our work
-              <Underline image={underline} />
+              {/* <Underline image={underline} /> */}
             </Header>
             <Subtext>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.

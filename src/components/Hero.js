@@ -25,7 +25,7 @@ const Hero = () => {
         <LeftSide>
           <Header>
             We make your work look amazing
-            <Underline image={underline} />
+            {/* <Underline image={underline} /> */}
           </Header>
           <Subtext>Beatiful desgins at your fingertips</Subtext>
           <CallToAction>See more</CallToAction>
