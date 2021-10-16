@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ContactButton = ({ text }) => {
   return (
-    <StyledLink to="/conact">
+    <StyledLink to="/contact">
       <Button>{text}</Button>
     </StyledLink>
   );

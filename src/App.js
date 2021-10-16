@@ -4,6 +4,9 @@ import GlobalStyles from "./utils/GlobalStyles";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import OurWork from "./pages/OurWork";
+import ItemPage from "./pages/ItemPage";
+import NoMatch from "./components/NoMatch";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -11,11 +14,20 @@ function App() {
       <GlobalStyles />
       <Navbar />
       <Switch>
-        <Route path="/" exact>
+        <Route exact path="/work/:id">
+          <ItemPage />
+        </Route>
+        <Route exact path="/work">
+          <OurWork />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
+        </Route>
+        <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/work">
-          <OurWork />
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
       <Footer />

@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../utils/colors";
 
-const ImageCard = ({ image, magnifying, classname }) => {
+const ImageCard = ({ image, magnifying, classname, id }) => {
   return (
-    <ImageContainer className={classname}>
+    <ImageContainer className={classname} to={`work/${id}`}>
       <Magnifying src={magnifying} />
       <Image src={image} />
     </ImageContainer>
   );
 };
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(Link)`
   background-color: ${colors.primary};
   height: 19.5rem;
   position: relative;

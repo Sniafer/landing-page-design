@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "../utils/colors";
 
 const CallToAction = ({ children }) => {
   return <Button>{children}</Button>;
@@ -14,8 +15,8 @@ const Button = styled.button`
   background: none;
   cursor: pointer;
   font-size: 2.25rem;
-  color: ${({ theme }) => theme.buttonColor};
-  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.buttonColor || colors.white};
+  background-color: ${({ theme }) => theme.backgroundColor || colors.primary};
   border-radius: 50px;
   margin-top: 3.8rem;
   justify-content: center;

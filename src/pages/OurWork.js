@@ -51,6 +51,7 @@ const OurWork = () => {
               key={item.id}
               classname={item.size}
               magnifying={magnifying}
+              id={item.id}
             />
           ))}
         </Row>
@@ -61,6 +62,7 @@ const OurWork = () => {
               key={item.id}
               classname={item.size}
               magnifying={magnifying}
+              id={item.id}
             />
           ))}
         </Row>

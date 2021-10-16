@@ -53,7 +53,8 @@ const LeftSide = styled.div`
 
 const RightSide = styled.aside`
   position: relative;
-  margin-top: 8.12rem;
+  margin-top: 10rem;
+  display: flex;
 `;
 const Image = styled.img`
   width: 51.5rem;
