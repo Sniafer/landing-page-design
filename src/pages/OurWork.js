@@ -1,17 +1,11 @@
 import styled, { ThemeProvider } from "styled-components";
 import Header from "../components/Header";
 import Subtext from "../components/Subtext";
-import Underline from "../components/Underline";
 import colors from "../utils/colors";
-import underline from "../images/underline1.svg";
 import Line from "../components/Line";
-import work1 from "../images/work1.png";
-import work2 from "../images/work2.png";
-import work3 from "../images/work3.png";
-import work4 from "../images/work4.png";
-import work5 from "../images/work5.png";
-import work6 from "../images/work6.png";
 import magnifying from "../images/magnifying.svg";
+import items from "../utils/items";
+import ImageCard from "../components/ImageCard";
 
 const OurWork = () => {
   const leftTheme = {
@@ -31,10 +25,7 @@ const OurWork = () => {
       <TopSection>
         <ThemeProvider theme={leftTheme}>
           <LeftSide>
-            <Header>
-              Our work
-              {/* <Underline image={underline} /> */}
-            </Header>
+            <Header>Our work</Header>
             <Subtext>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Subtext>
@@ -54,32 +45,14 @@ const OurWork = () => {
       </TopSection>
       <BotSection>
         <Row>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <BigImage src={work1} />
-          </ImageContainer>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <SmallImage src={work2} />
-          </ImageContainer>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <MediumImage src={work3} />
-          </ImageContainer>
-        </Row>
-        <Row>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <SmallImage src={work4} />
-          </ImageContainer>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <BigImage src={work5} />
-          </ImageContainer>
-          <ImageContainer>
-            <Magnifying src={magnifying} />
-            <MediumImage src={work6} />
-          </ImageContainer>
+          {items.map((item) => (
+            <ImageCard
+              image={item.image}
+              key={item.id}
+              classname={item.size}
+              magnifying={magnifying}
+            />
+          ))}
         </Row>
       </BotSection>
     </Container>
@@ -101,7 +74,7 @@ const BotSection = styled.section`
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 3.81rem;
+  flex-wrap: wrap;
 `;
 
 const LeftSide = styled.div`
@@ -115,48 +88,4 @@ const RightSide = styled.aside`
   display: flex;
 `;
 
-const ImageContainer = styled.div`
-  background-color: ${colors.primary};
-  height: 19.5rem;
-  position: relative;
-`;
-
-const BigImage = styled.img`
-  /* flex: 1.1; */
-  height: 19.5rem;
-  cursor: pointer;
-  transition: opacity 300ms ease-in-out;
-  &:hover {
-    opacity: 40%;
-  }
-`;
-const MediumImage = styled.img`
-  /* flex: 1; */
-  height: 19.5rem;
-  cursor: pointer;
-  transition: opacity 300ms ease-in-out;
-  &:hover {
-    opacity: 40%;
-  }
-`;
-const SmallImage = styled.img`
-  /* flex: 0.8; */
-  height: 19.5rem;
-  cursor: pointer;
-  transition: opacity 300ms ease-in-out;
-  &:hover {
-    opacity: 40%;
-  }
-`;
-
-const Magnifying = styled.img`
-  position: absolute;
-  top: 30%;
-  left: 40%;
-  display: none;
-  transition: display 300ms ease-in-out;
-  ${ImageContainer}:hover & {
-    display: block;
-  }
-`;
 export default OurWork;

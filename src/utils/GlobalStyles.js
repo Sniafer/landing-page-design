@@ -11,6 +11,15 @@ const GlobalStyles = createGlobalStyle`
      /* margin-left: 12rem;
      margin-right: 12rem; */
  };
+ .big {
+     flex: 1.2;
+ }
+ .medium {
+     flex: 1;
+ }
+ .small {
+     flex: 0.8;
+ }
 `;
 
 export default GlobalStyles;
