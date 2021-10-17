@@ -5,7 +5,7 @@ const Card = () => {
   return (
     <>
       {persons.map((person) => (
-        <StyledCard>
+        <StyledCard key={person.name}>
           <Name>{person.name}</Name>
           <Text>{person.text} </Text>
           <Image src={person.image} />
@@ -16,8 +16,8 @@ const Card = () => {
 };
 
 const StyledCard = styled.div`
-  width: 21.56rem;
-  height: 19.19rem;
+  width: 16.17rem;
+  height: 14.39rem;
   border-radius: 42px;
   background-color: ${({ theme }) => theme.backgroundColor};
   display: flex;
@@ -30,27 +30,30 @@ const StyledCard = styled.div`
     transform: scale(1.03);
     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
   }
+  @media (max-width: 900px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 const Name = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.12rem;
   font-weight: 700;
   color: ${({ theme }) => theme.cardHeaderColor};
-  margin-top: 5.84rem;
+  margin-top: 4.38rem;
 `;
 
 const Text = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.12rem;
   color: ${({ theme }) => theme.textColor};
-  width: 11.81rem;
+  width: 8.85rem;
   text-align: center;
-  margin-top: 0.6rem;
+  margin-top: 0.45rem;
 `;
 
 const Image = styled.img`
   border-radius: 50%;
   position: absolute;
-  top: -2rem;
+  top: -3rem;
 `;
 
 export default Card;

@@ -6,10 +6,10 @@ const Subtext = ({ children }) => {
 };
 
 const StyledSubtext = styled.p`
-  font-size: ${({ theme }) => theme.subFont || "2.25rem"};
+  font-size: ${({ theme }) => theme.subFont || "1.68rem"};
   color: ${({ theme }) => theme.subColor || colors.gray};
   width: ${({ theme }) => theme.subWidth || "auto"};
-  margin-top: ${({ theme }) => theme.subTop || "3.8rem"};
+  margin-top: ${({ theme }) => theme.subTop || "2.85rem"};
   letter-spacing: 0.1rem;
   line-height: 50px;
 `;

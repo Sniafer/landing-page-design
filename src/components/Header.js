@@ -7,7 +7,7 @@ const Header = ({ children }) => {
 
 const StyledHeader = styled.h1`
   width: ${({ theme }) => theme.headerWidth || "auto"};
-  font-size: 4.5rem;
+  font-size: 3.37rem;
   position: relative;
   color: ${({ theme }) => theme.headerColor || colors.black};
   font-weight: 700;

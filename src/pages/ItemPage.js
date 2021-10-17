@@ -40,12 +40,12 @@ const ItemPage = () => {
 };
 
 const Container = styled.div`
-  margin-bottom: 7.43rem;
+  margin-bottom: 5.57rem;
 `;
 
 const Article = styled.article`
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 9rem;
+  margin-right: 9rem;
 `;
 
 const Section = styled.section`
@@ -54,10 +54,10 @@ const Section = styled.section`
 
 const Image = styled.img`
   width: 100%;
-  height: 41rem;
+  height: 30.75rem;
   object-fit: cover;
-  margin-top: 10rem;
-  margin-bottom: 3.81rem;
+  margin-top: 7.5rem;
+  margin-bottom: 2.85rem;
 `;
 
 export default ItemPage;

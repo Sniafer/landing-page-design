@@ -19,10 +19,10 @@ const Contact = () => {
   };
 
   const leftTheme = {
-    subWidth: "23rem",
+    subWidth: "23.25rem",
   };
   const rightTheme = {
-    subWidth: "47rem",
+    subWidth: "50rem",
     subTop: "0rem",
   };
 
@@ -59,15 +59,15 @@ const Contact = () => {
 };
 
 const Container = styled.div`
-  margin-left: 12rem;
-  margin-right: 12rem;
-  margin-top: 10rem;
-  margin-bottom: 7.43rem;
+  margin-left: 9rem;
+  margin-right: 9rem;
+  margin-top: 7.5rem;
+  margin-bottom: 5.57rem;
 `;
 
 const Top = styled.div`
   display: flex;
-  margin-bottom: 3.81rem;
+  margin-bottom: 2.85rem;
 `;
 
 const LeftSide = styled.div`
@@ -84,11 +84,11 @@ const Form = styled.form`
   flex-direction: column;
 `;
 const Input = styled.input`
-  width: 32rem;
-  height: 4.5rem;
+  width: 24rem;
+  height: 3.37rem;
   border: none;
   background-color: ${colors.light};
-  font-size: 2.25rem;
+  font-size: 1.68rem;
 `;
 
 export default Contact;

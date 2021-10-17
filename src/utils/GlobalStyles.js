@@ -18,6 +18,9 @@ const GlobalStyles = createGlobalStyle`
  .small {
      flex: 0.8;
  }
+ .show {
+     display: block;
+ }
 `;
 
 export default GlobalStyles;

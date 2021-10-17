@@ -36,27 +36,35 @@ const MeetUs = () => {
 };
 
 const Section = styled.section`
-  margin-top: 7rem;
+  margin-top: 5.25rem;
   background-color: ${({ theme }) => theme.sectionColor || colors.white};
   width: 100%;
-  padding-bottom: 7rem;
+  padding-bottom: 5.25rem;
 `;
 
 const Article = styled.article`
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 9rem;
+  margin-right: 9rem;
+  @media (max-width: 1200px) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 `;
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 6rem;
+  padding-top: 4.5rem;
 `;
 
 const CardContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 10.5rem;
+  margin-top: 7.87rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export default MeetUs;

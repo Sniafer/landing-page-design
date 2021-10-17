@@ -7,8 +7,8 @@ const Logo = ({ text }) => {
 
 const StyledLogo = styled(Link)`
   text-decoration: none;
-  font-size: 1.88rem;
-  margin-right: 7.5rem;
+  font-size: 1.41rem;
+  margin-right: 5.6rem;
   font-weight: 700;
   color: ${({ theme }) => theme.logoColor};
   cursor: pointer;

@@ -8,17 +8,17 @@ const CallToAction = ({ children }) => {
 export default CallToAction;
 
 const Button = styled.button`
-  width: 22rem;
-  height: 6.5rem;
+  width: 16.5rem;
+  height: 4.87rem;
   text-decoration: none;
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 2.25rem;
+  font-size: 1.68rem;
   color: ${({ theme }) => theme.buttonColor || colors.white};
   background-color: ${({ theme }) => theme.backgroundColor || colors.primary};
   border-radius: 50px;
-  margin-top: 3.8rem;
+  margin-top: 2.85rem;
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);

@@ -72,32 +72,32 @@ const OurWork = () => {
 };
 
 const Container = styled.div`
-  margin-left: 12rem;
-  margin-right: 12rem;
+  margin-left: 9rem;
+  margin-right: 9rem;
 `;
 
 const TopSection = styled.section`
   display: flex;
 `;
 const BotSection = styled.section`
-  margin-top: 12.75rem;
+  margin-top: 9.56rem;
 `;
 
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 3.81rem;
+  margin-bottom: 2.85rem;
 `;
 
 const LeftSide = styled.div`
   margin-right: auto;
-  margin-top: 10rem;
+  margin-top: 7.5rem;
 `;
 
 const RightSide = styled.aside`
   position: relative;
-  margin-top: 10rem;
+  margin-top: 7.5rem;
   display: flex;
 `;
 

@@ -13,13 +13,13 @@ const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  height: 4.43rem;
+  height: 3.32rem;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const Text = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.12rem;
   color: ${({ theme }) => theme.textColor};
 `;
 

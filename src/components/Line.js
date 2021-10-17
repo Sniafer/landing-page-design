@@ -8,8 +8,8 @@ const Line = () => {
 
 const StyledLine = styled.img`
   color: ${colors.gray};
-  height: 21.56rem;
-  width: 2rem;
+  height: 20rem;
+  width: 1.5rem;
   margin-right: 7rem;
 `;
 

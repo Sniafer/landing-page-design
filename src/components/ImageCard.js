@@ -13,13 +13,13 @@ const ImageCard = ({ image, magnifying, classname, id }) => {
 
 const ImageContainer = styled(Link)`
   background-color: ${colors.primary};
-  height: 19.5rem;
+  height: 17rem;
   position: relative;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 `;
 
 const Image = styled.img`
-  height: 19.5rem;
+  height: 17rem;
   cursor: pointer;
   transition: opacity 300ms ease-in-out;
   width: 100%;
