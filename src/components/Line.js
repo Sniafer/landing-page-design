@@ -8,9 +8,17 @@ const Line = () => {
 
 const StyledLine = styled.img`
   color: ${colors.gray};
-  height: 20rem;
+  height: ${({ height }) => height || "20rem"};
   width: 1.5rem;
   margin-right: 7rem;
+  margin-left: 2rem;
+  @media (max-width: 1400px) {
+    margin-right: 8rem;
+    margin-left: 2rem;
+  }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export default Line;

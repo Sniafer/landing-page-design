@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import colors from "../utils/colors";
 
-const Subtext = ({ children }) => {
-  return <StyledSubtext>{children}</StyledSubtext>;
+const Subtext = ({ children, left }) => {
+  return <StyledSubtext left={left}>{children}</StyledSubtext>;
 };
 
 const StyledSubtext = styled.p`
@@ -12,6 +12,15 @@ const StyledSubtext = styled.p`
   margin-top: ${({ theme }) => theme.subTop || "2.85rem"};
   letter-spacing: 0.1rem;
   line-height: 50px;
+  @media (max-width: 1400px) {
+    width: ${({ left }) => (left ? "" : "auto")};
+    margin-right: ${({ left }) => (left ? "1rem" : "0")};
+  }
+  @media (max-width: 900px) {
+    margin-right: 0;
+    width: auto;
+    margin-top: 2.85rem;
+  }
 `;
 
 export default Subtext;

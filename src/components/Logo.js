@@ -12,6 +12,9 @@ const StyledLogo = styled(Link)`
   font-weight: 700;
   color: ${({ theme }) => theme.logoColor};
   cursor: pointer;
+  @media (max-width: 380px) {
+    margin-right: auto;
+  }
 `;
 
 export default Logo;

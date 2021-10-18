@@ -11,6 +11,9 @@ const StyledHeader = styled.h1`
   position: relative;
   color: ${({ theme }) => theme.headerColor || colors.black};
   font-weight: 700;
+  @media (max-width: 380px) {
+    width: auto;
+  }
 `;
 
 export default Header;

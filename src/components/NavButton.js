@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import colors from "../utils/colors";
 
 const NavButton = ({ name, path, onClick }) => {
   return (
@@ -17,12 +18,16 @@ const Button = styled.button`
   background: none;
   color: ${({ theme }) => theme.buttonColor};
   cursor: pointer;
+  @media (max-width: 600px) {
+    color: ${colors.white};
+  }
 `;
 const StyledLink = styled(Link)`
   margin-right: 3rem;
   text-decoration: none;
   @media (max-width: 600px) {
-    margin-top: 1rem;
+    padding: 1rem;
+    margin-right: 0;
   }
 `;
 

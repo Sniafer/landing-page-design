@@ -21,6 +21,18 @@ const GlobalStyles = createGlobalStyle`
  .show {
      display: block;
  }
+
+ .open {
+  transform: translateX(-50px);
+  background: transparent;
+ }
+ .open:before {
+    transform: rotate(45deg) translate(24px, -24px);
+ }
+ 
+ .open:after {
+    transform: rotate(-45deg) translate(24px, 24px);
+ }
 `;
 
 export default GlobalStyles;

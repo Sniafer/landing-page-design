@@ -63,11 +63,18 @@ const Container = styled.div`
   margin-right: 9rem;
   margin-top: 7.5rem;
   margin-bottom: 5.57rem;
+  @media (max-width: 1200px) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 `;
 
 const Top = styled.div`
   display: flex;
   margin-bottom: 2.85rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftSide = styled.div`

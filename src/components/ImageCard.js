@@ -16,6 +16,9 @@ const ImageContainer = styled(Link)`
   height: 17rem;
   position: relative;
   margin-right: 1.5rem;
+  @media (max-width: 900px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Image = styled.img`

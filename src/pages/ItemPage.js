@@ -46,10 +46,17 @@ const Container = styled.div`
 const Article = styled.article`
   margin-left: 9rem;
   margin-right: 9rem;
+  @media (max-width: 1200px) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 `;
 
 const Section = styled.section`
   display: flex;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 
 const Image = styled.img`

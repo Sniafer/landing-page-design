@@ -26,7 +26,7 @@ const OurWork = () => {
         <ThemeProvider theme={leftTheme}>
           <LeftSide>
             <Header>Our work</Header>
-            <Subtext>
+            <Subtext left={true}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Subtext>
           </LeftSide>
@@ -74,13 +74,21 @@ const OurWork = () => {
 const Container = styled.div`
   margin-left: 9rem;
   margin-right: 9rem;
+  @media (max-width: 1200px) {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 `;
 
 const TopSection = styled.section`
   display: flex;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `;
 const BotSection = styled.section`
   margin-top: 9.56rem;
+  margin-bottom: 2.85rem;
 `;
 
 const Row = styled.div`
@@ -88,11 +96,18 @@ const Row = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 2.85rem;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 `;
 
 const LeftSide = styled.div`
   margin-right: auto;
   margin-top: 7.5rem;
+  @media (max-width: 900px) {
+    margin-right: 0;
+  }
 `;
 
 const RightSide = styled.aside`

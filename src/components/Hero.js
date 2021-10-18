@@ -6,6 +6,7 @@ import colors from "../utils/colors";
 import Header from "./Header";
 import Subtext from "./Subtext";
 import CallToAction from "./CallToAction";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const theme = {
@@ -23,7 +24,9 @@ const Hero = () => {
         <LeftSide>
           <Header>We make your work look amazing</Header>
           <Subtext>Beatiful desgins at your fingertips</Subtext>
-          <CallToAction>See more</CallToAction>
+          <StyledLink to="/work">
+            <CallToAction>See more</CallToAction>
+          </StyledLink>
         </LeftSide>
         <RightSide>
           <Image src={heroImage} />
@@ -75,4 +78,8 @@ const Background = styled.img`
   right: 0;
   z-index: -1;
   opacity: 55%;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
