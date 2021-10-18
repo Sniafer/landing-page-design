@@ -7,11 +7,13 @@ import OurWork from "./pages/OurWork";
 import ItemPage from "./pages/ItemPage";
 import NoMatch from "./components/NoMatch";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
       <GlobalStyles />
+      <ScrollToTop />
       <Navbar />
       <Switch>
         <Route exact path="/work/:id">
