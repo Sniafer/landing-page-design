@@ -1,11 +1,37 @@
 import styled from "styled-components";
 import colors from "../utils/colors";
+import { motion } from "framer-motion";
 
 const Subtext = ({ children, left }) => {
-  return <StyledSubtext left={left}>{children}</StyledSubtext>;
+  const subtextAnimation = {
+    hide: {
+      opacity: 0,
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.7,
+        duration: 0.7,
+      },
+    },
+  };
+
+  return (
+    <StyledSubtext
+      variants={subtextAnimation}
+      initial="hide"
+      whileInView="show"
+      viewport={{ once: true }}
+      left={left}
+    >
+      {children}
+    </StyledSubtext>
+  );
 };
 
-const StyledSubtext = styled.p`
+const StyledSubtext = styled(motion.p)`
   font-size: ${({ theme }) => theme.subFont || "1.68rem"};
   color: ${({ theme }) => theme.subColor || colors.gray};
   width: ${({ theme }) => theme.subWidth || "auto"};

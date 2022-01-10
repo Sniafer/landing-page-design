@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import colors from "../utils/colors";
 import Card from "./Card";
@@ -16,7 +17,11 @@ const MeetUs = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Section>
+      <Section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
         <Article>
           <HeaderWrapper>
             <Header>Meet us</Header>
@@ -35,8 +40,7 @@ const MeetUs = () => {
   );
 };
 
-const Section = styled.section`
-  margin-top: 5.25rem;
+const Section = styled(motion.section)`
   background-color: ${({ theme }) => theme.sectionColor || colors.white};
   width: 100%;
   padding-bottom: 5.25rem;

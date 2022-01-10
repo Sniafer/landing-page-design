@@ -1,13 +1,25 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import persons from "../utils/persons";
 
 const Card = () => {
   return (
     <>
       {persons.map((person) => (
-        <StyledCard key={person.name}>
+        <StyledCard
+          whileHover={{
+            scale: 1.2,
+            zIndex: 10,
+            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.35)",
+            transition: {
+              duration: 0.3,
+            },
+          }}
+          key={person.name}
+        >
           <Name>{person.name}</Name>
           <Text>{person.text} </Text>
+          <Text>{person.text2}</Text>
           <Image src={person.image} />
         </StyledCard>
       ))}
@@ -15,20 +27,18 @@ const Card = () => {
   );
 };
 
-const StyledCard = styled.div`
-  width: 16.17rem;
-  height: 14.39rem;
-  border-radius: 42px;
+const StyledCard = styled(motion.div)`
+  width: 20rem;
+  min-height: 18rem;
+  border-radius: 20px;
   background-color: ${({ theme }) => theme.backgroundColor};
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
-  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+  @media (max-width: 1150px) {
+    margin-right: 1rem;
   }
   @media (max-width: 900px) {
     margin-bottom: 5rem;
@@ -45,7 +55,7 @@ const Name = styled.h3`
 const Text = styled.p`
   font-size: 1.12rem;
   color: ${({ theme }) => theme.textColor};
-  width: 8.85rem;
+  padding: 0.5rem 2rem;
   text-align: center;
   margin-top: 0.45rem;
 `;

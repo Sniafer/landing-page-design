@@ -40,14 +40,18 @@ const Hero = () => {
 export default Hero;
 
 const HeroSection = styled.section`
+  padding-top: 3rem;
   display: flex;
   margin-left: 9rem;
   margin-right: 9rem;
+  min-height: 100vh;
   @media (max-width: 1200px) {
     margin-right: 2rem;
     margin-left: 2rem;
+    padding-top: 0;
   }
 `;
+
 const LeftSide = styled.div`
   margin-right: auto;
   margin-top: 7.5rem;
@@ -58,7 +62,6 @@ const LeftSide = styled.div`
     margin-right: 0;
   }
 `;
-
 const RightSide = styled.aside`
   position: relative;
   margin-top: 7.5rem;

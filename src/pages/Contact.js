@@ -2,28 +2,38 @@ import { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import CallToAction from "../components/CallToAction";
 import Header from "../components/Header";
-import Line from "../components/Line";
+import { motion } from "framer-motion";
 import Subtext from "../components/Subtext";
 import colors from "../utils/colors";
 
 const Contact = () => {
   const [text, setText] = useState("");
+  const [mail, setMail] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setText("");
-  };
-
-  const handleChange = (e) => {
-    setText(e.value);
+    setMail("");
+    setName("");
   };
 
   const leftTheme = {
-    subWidth: "23.25rem",
+    subWidth: "auto",
   };
-  const rightTheme = {
-    subWidth: "50rem",
-    subTop: "0rem",
+
+  const inputAnimation = {
+    hide: {
+      opacity: 0,
+      y: 20,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+      },
+    },
   };
 
   return (
@@ -33,27 +43,46 @@ const Contact = () => {
           <LeftSide>
             <Header>Work with us</Header>
             <Subtext>
-              Find our work fit you project? Send us you e-mail and we will
-              contact you
+              Find our work fit you project? Send us your e-mail and we will
+              contact you.
             </Subtext>
-          </LeftSide>
-        </ThemeProvider>
-        <ThemeProvider theme={rightTheme}>
-          <RightSide>
-            <Line />
             <Subtext>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et justo
               ornare tempor morbi lorem sit. Sed pharetra ornare egestas libero
               hac vel sit mi pellentesque. Cum nulla in ornare sagittis dolor
               mollis lorem. Dui cum faucibus id at faucibus nun.
             </Subtext>
-          </RightSide>
+          </LeftSide>
         </ThemeProvider>
+        <RightSide>
+          <Form
+            variants={inputAnimation}
+            initial="hide"
+            whileInView="show"
+            viewport={{ once: true }}
+            onSubmit={handleSubmit}
+          >
+            <Input
+              onChange={({ target }) => setName(target.value)}
+              type="text"
+              value={name}
+              placeholder="name"
+            />
+            <Input
+              onChange={({ target }) => setMail(target.value)}
+              type="email"
+              value={mail}
+              placeholder="e-mail"
+            />
+            <TextArea
+              onChange={({ target }) => setText(target.value)}
+              value={text}
+              placeholder="message"
+            />
+            <CallToAction>Contact Us</CallToAction>
+          </Form>
+        </RightSide>
       </Top>
-      <Form onSubmit={handleSubmit}>
-        <Input onChange={handleChange} value={text} />
-        <CallToAction>Contact Us</CallToAction>
-      </Form>
     </Container>
   );
 };
@@ -71,6 +100,7 @@ const Container = styled.div`
 
 const Top = styled.div`
   display: flex;
+  justify-content: space-between;
   margin-bottom: 2.85rem;
   @media (max-width: 900px) {
     flex-direction: column;
@@ -79,23 +109,64 @@ const Top = styled.div`
 
 const LeftSide = styled.div`
   margin-right: auto;
+  width: 100%;
 `;
 
-const RightSide = styled.aside`
+const RightSide = styled.div`
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
-const Form = styled.form`
+const Form = styled(motion.form)`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 2rem;
+  width: 100%;
+  margin-top: 5rem;
+  @media (max-width: 900px) {
+    padding: 0;
+  }
 `;
 const Input = styled.input`
-  width: 24rem;
+  width: 100%;
   height: 3.37rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: none;
   background-color: ${colors.light};
   font-size: 1.68rem;
+  color: ${colors.black};
+  :focus {
+    outline-color: ${colors.primary};
+  }
+  ::placeholder {
+    color: #827785;
+  }
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  background-color: ${colors.light};
+  font-size: 1.68rem;
+  color: ${colors.black};
+  min-height: 10rem;
+  :focus {
+    outline-color: ${colors.primary};
+  }
+  ::placeholder {
+    color: #827785;
+  }
 `;
 
 export default Contact;

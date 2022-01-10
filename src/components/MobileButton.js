@@ -3,16 +3,17 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import colors from "../utils/colors";
 
-const NavButton = ({ name, path }) => {
+const NavButton = ({ name, path, onClick }) => {
   return (
     <StyledLink to={path}>
-      <Button whileHover={{ color: colors.primary }}>{name}</Button>
+      <Button onClick={onClick}>{name}</Button>
     </StyledLink>
   );
 };
 
 const Button = styled(motion.button)`
-  font-size: 1.12rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
   font-weight: 400;
   text-decoration: none;
   border: none;

@@ -6,17 +6,23 @@ const persons = [
   {
     image: person1,
     name: "John Doe",
-    text: "Award winning designer and long time developer",
+    text: "Award winning designer and long time developer. ",
+    text2:
+      "Award winning designer and long time developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam.",
   },
   {
     image: person2,
     name: "Jane Doe",
     text: "Award winning designer and long time developer",
+    text2:
+      "Award winning designer and long time developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam.",
   },
   {
     image: person3,
     name: "Joan Doe",
     text: "Award winning designer and long time developer",
+    text2:
+      "Award winning designer and long time developer. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, nam.",
   },
 ];
 

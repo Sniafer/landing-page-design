@@ -1,10 +1,12 @@
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
 import colors from "../utils/colors";
 import NavButton from "./NavButton";
 import navItems from "../utils/navItems";
 import ContactButton from "./ContactButton";
+import MobileButton from "./MobileButton";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -18,8 +20,23 @@ const Navbar = () => {
     background: colors.white,
   };
 
+  const menuAnimation = {
+    hide: {
+      x: "100%",
+      transition: {
+        duration: 0.3,
+      },
+    },
+    show: {
+      x: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   const handleShow = () => {
-    open === "open" ? setOpen("") : setOpen("open");
+    setOpen(!open);
   };
 
   return (
@@ -33,21 +50,40 @@ const Navbar = () => {
           <ContactButton text="Get in touch" />
         </ButtonContainer>
         <MobileNav>
-          <Menu onClick={handleShow}>
-            <Burger className={open} />
-          </Menu>
+          <Hamburger onClick={handleShow}>
+            <Line
+              color={open ? colors.white : colors.primary}
+              width={open ? "40px" : ""}
+              transformtop={
+                open ? "rotate(45deg) translateY(5px) translateX(5px)" : ""
+              }
+              transformbottom={
+                open ? "rotate(-45deg) translateY(-13px) translateX(13px)" : ""
+              }
+            />
+          </Hamburger>
+          <AnimatePresence>
+            {open && (
+              <NavContainer
+                variants={menuAnimation}
+                initial="hide"
+                animate="show"
+                exit="hide"
+              >
+                {navItems.map((item) => (
+                  <MobileButton
+                    name={item.name}
+                    key={item.name}
+                    path={item.path}
+                    onClick={handleShow}
+                  />
+                ))}
+                <ContactButton text="Get in touch" />
+              </NavContainer>
+            )}
+          </AnimatePresence>
         </MobileNav>
       </Nav>
-      <MobileMenu open={open}>
-        {navItems.map((item) => (
-          <NavButton
-            name={item.name}
-            key={item.name}
-            path={item.path}
-            onClick={handleShow}
-          />
-        ))}
-      </MobileMenu>
     </ThemeProvider>
   );
 };
@@ -77,19 +113,6 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const MobileMenu = styled.div`
-  display: none;
-  @media (max-width: 600px) {
-    display: ${({ open }) => (open !== "" ? "flex" : "none")};
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: ${colors.primary};
-    margin-top: 2rem;
-    width: 100%;
-  }
-`;
-
 const MobileNav = styled.div`
   display: none;
   @media (max-width: 600px) {
@@ -97,40 +120,70 @@ const MobileNav = styled.div`
   }
 `;
 
-const Menu = styled.div`
-  position: relative;
+const Hamburger = styled(motion.button)`
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
-  align-items: center;
-  width: 3rem;
-  height: 3rem;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  border: 0.2rem solid ${colors.primary};
+  z-index: 30;
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
 `;
 
-const Burger = styled.button`
-  width: 32px;
-  height: 4px;
-  background: ${colors.primary};
-  text-decoration: none;
-  border: none;
-  transition: all 0.5s ease-in-out;
-  &:before,
-  &:after {
+const Line = styled(motion.div)`
+  height: 5px;
+  width: 30px;
+  margin-bottom: 13px;
+  background-color: ${colors.primary};
+  transition: all 0.3s ease-out;
+  position: relative;
+
+  ::before {
     content: "";
+    height: 5px;
+    width: ${(props) => props.width || "40px"};
+    background-color: ${(props) => props.color || colors.primary};
     position: absolute;
-    width: 32px;
-    height: 4px;
-    background: ${colors.primary};
-    transition: all 0.5s ease-in-out;
+    top: -13px;
+    right: 0;
+    transition: all 0.3s ease-out;
+    transform: ${(props) => props.transformtop || ""};
   }
-  &:before {
-    transform: translateX(-16px) translateY(-12px);
+
+  ::after {
+    content: "";
+    height: 5px;
+    width: ${(props) => props.width || "20px"};
+    background-color: ${(props) => props.color || colors.primary};
+    position: absolute;
+    top: 13px;
+    right: 0;
+    transition: all 0.3s ease-out;
+    transform: ${(props) => props.transformbottom || ""};
   }
-  &:after {
-    transform: translateX(-16px) translateY(8px);
-  }
+`;
+
+const NavContainer = styled(motion.div)`
+  width: 16rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${colors.primary};
+  z-index: 10;
+  top: 0;
+  right: 0;
+  height: 100%;
+  transform: translateX(100%);
+  filter: drop-shadow(-1px 0px 4px rgba(6, 52, 63, 0.35));
 `;
 
 export default Navbar;
